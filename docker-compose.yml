@@ -1,0 +1,26 @@
+version: "3.3"
+services:
+  web:
+    build: ./alphastack-web
+    depends_on:
+      - api
+    ports:
+      - "3000:3000"
+    networks:
+      - network-backend
+  api:
+    build: ./alphastack-back
+    ports:
+      - "9000:9000"
+    networks: 
+     - network-backend
+  sqlpad:
+    build: ./sqlpad
+    ports:
+      - "3010:3010"
+      - "3001:3001"
+    networks: 
+     - network-backend
+
+networks:
+  network-backend:
