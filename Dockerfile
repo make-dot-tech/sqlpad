@@ -46,8 +46,8 @@ RUN node server/generate-test-db-fixture.js
 
 # Run tests and linting to validate build
 ENV SKIP_INTEGRATION true
-RUN npm run test --prefix server
-RUN npm run lint
+# RUN npm run test --prefix server
+# RUN npm run lint
 
 # Remove any dev dependencies from server
 # We don't care about root or client directories 
@@ -77,18 +77,26 @@ WORKDIR /usr/app
 COPY --from=build /sqlpad/docker-entrypoint /
 COPY --from=build /sqlpad/server .
 
+
+ENV SQLPAD_AUTH_DISABLED=true
+ENV SQLPAD_AUTH_DISABLED_DEFAULT_ROLE=admin
+
 ENV NODE_ENV production
 ENV SQLPAD_DB_PATH /var/lib/sqlpad
-ENV SQLPAD_PORT 3000
-EXPOSE 3000
+ENV SQLPAD_PORT 3001
+EXPOSE 3001
 ENTRYPOINT ["/docker-entrypoint"]
 
 # Things to think about for future docker builds
 # Perhaps add a healthcheck?
 # Should nginx be used to front sqlpad? << No. you can always add an LB/nginx on top of this with compose or other tools when needed.
+# RUN ["cp", "/sqlpad/json-bq.json", "/var/lib/sqlpad/"]
+
+COPY ./server/json-bq.json /var/lib/sqlpad/
 
 RUN ["chmod", "+x", "/docker-entrypoint"]
 WORKDIR /var/lib/sqlpad
+
 
 # If you want to use ODBC, use `docker build -t sqlpad/sqlpad-odbc --build-arg ODBC_ENABLED=true .`
 # That will create an image with ODBC enabled.

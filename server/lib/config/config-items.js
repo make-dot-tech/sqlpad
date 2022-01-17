@@ -107,12 +107,12 @@ const configItems = [
   {
     key: 'admin',
     envVar: 'SQLPAD_ADMIN',
-    default: '',
+    default: 'saurabh@appler.xyz',
   },
   {
     key: 'adminPassword',
     envVar: 'SQLPAD_ADMIN_PASSWORD',
-    default: '',
+    default: 'password',
   },
   {
     key: 'defaultConnectionId',

@@ -53,7 +53,7 @@ spec:
       - name: sqlpad
         image: sqlpad/sqlpad:5
         ports:
-        - containerPort: 3000
+        - containerPort: 3001
         resources:
           limits:
             memory: 512Mi
@@ -96,8 +96,8 @@ spec:
   type: NodePort
   ports:
   - name: tcp-rule-sqlpad
-    port: 3000
+    port: 3001
     protocol: TCP
-    targetPort: 3000
+    targetPort: 3001
   selector:
     app: sqlpad
