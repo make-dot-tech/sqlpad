@@ -77,6 +77,8 @@ WORKDIR /usr/app
 COPY --from=build /sqlpad/docker-entrypoint /
 COPY --from=build /sqlpad/server .
 
+# RUN ["cp", "/sqlpad/json-bq.json", "/var/lib/sqlpad/"]
+COPY ./server/json-bq.json /var/lib/sqlpad/
 
 ENV SQLPAD_AUTH_DISABLED=true
 ENV SQLPAD_AUTH_DISABLED_DEFAULT_ROLE=admin
@@ -90,9 +92,6 @@ ENTRYPOINT ["/docker-entrypoint"]
 # Things to think about for future docker builds
 # Perhaps add a healthcheck?
 # Should nginx be used to front sqlpad? << No. you can always add an LB/nginx on top of this with compose or other tools when needed.
-# RUN ["cp", "/sqlpad/json-bq.json", "/var/lib/sqlpad/"]
-
-COPY ./server/json-bq.json /var/lib/sqlpad/
 
 RUN ["chmod", "+x", "/docker-entrypoint"]
 WORKDIR /var/lib/sqlpad
