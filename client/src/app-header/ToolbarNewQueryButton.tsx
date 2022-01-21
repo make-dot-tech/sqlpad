@@ -29,7 +29,7 @@ function ToolbarNewQueryButton() {
         resetNewQuery();
       }}
     >
-      New
+      New Query
     </ButtonLink>
   );
 }
