@@ -24,6 +24,7 @@ WORKDIR /sqlpad
 # * client/ for web front end
 # * server/ for server (and what eventually holds built front end)
 COPY ./package* ./
+COPY ./docker* ./
 COPY ./client/package* ./client/
 COPY ./server/package* ./server/
 
@@ -90,10 +91,9 @@ ENTRYPOINT ["/docker-entrypoint"]
 # Things to think about for future docker builds
 # Perhaps add a healthcheck?
 # Should nginx be used to front sqlpad? << No. you can always add an LB/nginx on top of this with compose or other tools when needed.
-# RUN ["cp", "/sqlpad/json-bq.json", "/var/lib/sqlpad/"]
+# RUN ["cp", "/server/json-bq.json", "/var/lib/sqlpad/"]
 
-COPY ./server/json-bq.json /var/lib/sqlpad/
-
+COPY ./json-bq.json /var/lib/sqlpad/
 RUN ["chmod", "+x", "/docker-entrypoint"]
 WORKDIR /var/lib/sqlpad
 

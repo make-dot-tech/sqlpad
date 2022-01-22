@@ -15,7 +15,7 @@ const PROXY_ROUTES = [
   '/auth/oidc',
 ];
 
-const PROXY_URL = 'http://sqlpad:3010';
+const PROXY_URL = process?.env?.RUN_MODE !== 'prod' ? 'http://localhost:3010' : 'http://sqlpad:3010';
 
 const proxy: Record<string, string> = {};
 
