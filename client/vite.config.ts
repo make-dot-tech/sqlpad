@@ -17,6 +17,7 @@ const PROXY_ROUTES = [
 
 const PROXY_URL = process?.env?.RUN_MODE !== 'prod' ? 'http://localhost:3010' : 'http://sqlpad:3010';
 
+
 const proxy: Record<string, string> = {};
 
 PROXY_ROUTES.forEach((route) => {
