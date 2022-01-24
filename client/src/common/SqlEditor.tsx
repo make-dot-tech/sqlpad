@@ -7,7 +7,7 @@ import useAppContext from '../utilities/use-app-context';
 import 'ace-builds/src-noconflict/mode-sql';
 import 'ace-builds/src-noconflict/theme-sqlserver';
 
-const noop = () => {};
+const noop = () => { };
 
 export interface Props {
   autoHeight: boolean;
@@ -16,6 +16,8 @@ export interface Props {
   value: string;
   onSelectionChange: (value: string) => void;
 }
+console.log(localStorage.key(0));
+
 
 function SqlEditor({
   autoHeight,
@@ -130,7 +132,7 @@ SqlEditor.propTypes = {
 
 SqlEditor.defaultProps = {
   autoHeight: true,
-  onSelectionChange: () => {},
+  onSelectionChange: () => { },
   readOnly: false,
   value: '',
 };

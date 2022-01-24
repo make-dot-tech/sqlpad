@@ -19,7 +19,7 @@ const Text = ({ children, className, type, ...rest }: Props) => {
   }
 
   return (
-    <span className={cs.join(' ')} {...rest}>
+    <span className={`${cs.join(' ')} text-gray-300`} {...rest}>
       {children}
     </span>
   );

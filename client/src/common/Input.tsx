@@ -25,7 +25,7 @@ const Input = React.forwardRef<Ref, Props>((props, ref) => {
   }
 
   return (
-    <input ref={ref} className={classNames.join(' ')} {...rest}>
+    <input ref={ref} className={`${classNames.join(' ')} dark:bg-transparent border dark:border-gray-700 dark:text-dark-textPrimary rounded`} {...rest}>
       {children}
     </input>
   );

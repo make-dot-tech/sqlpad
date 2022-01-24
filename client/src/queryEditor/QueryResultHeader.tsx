@@ -68,7 +68,7 @@ function QueryResultHeader() {
   }
 
   return (
-    <div className={styles.toolbar}>
+    <div className={`${styles.toolbar} dark:bg-dark-themeBgDark`}>
       {statementId && numOfStatements > 1 ? (
         <Button
           className={styles.returnToStatementsBtn}

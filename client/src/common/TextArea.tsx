@@ -22,7 +22,7 @@ export default function TextArea({
   }
 
   return (
-    <textarea className={classNames.join(' ')} {...rest}>
+    <textarea className={`${classNames.join(' ')} bg-green-500`} {...rest}>
       {children}
     </textarea>
   );

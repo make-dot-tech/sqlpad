@@ -115,7 +115,7 @@ const bodyStyle: React.CSSProperties = {
 
 const headerCellStyle: React.CSSProperties = {
   lineHeight: '22px',
-  backgroundColor: '#f4f4f4',
+  // backgroundColor: 'red',
   justifyContent: 'space-between',
   borderBottom: '1px solid #CCC',
   display: 'flex',
@@ -130,7 +130,7 @@ const cellStyle: React.CSSProperties = {
   display: 'relative',
   overflowX: 'hidden',
   overflowY: 'hidden',
-  color: 'rgba(0, 0, 0, 0.65)',
+  // color: 'rgba(0, 0, 0, 0.65)',
   fontFamily:
     "'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace",
 };
@@ -308,7 +308,7 @@ class QueryResultDataTable extends React.PureComponent<
     // If dataKey is present this is an actual header to render
     if (column) {
       return (
-        <div style={Object.assign({}, style, headerCellStyle)}>
+        <div style={Object.assign({}, style, headerCellStyle)} className="bg-gray-300 dark:bg-gray-700">
           <div>{column.name}</div>
           <Draggable
             axis="x"
@@ -318,7 +318,7 @@ class QueryResultDataTable extends React.PureComponent<
               this.resizeColumn({ dataKey: column.name, deltaX, columnIndex });
             }}
             position={{ x: 0, y: 0 }}
-            // zIndex={999}
+          // zIndex={999}
           >
             <span className="DragHandleIcon">⋮</span>
           </Draggable>
@@ -346,7 +346,7 @@ class QueryResultDataTable extends React.PureComponent<
     let scrollboxClass = styles.scrollboxOdd;
     let faderClass = styles.faderOdd;
     if (rowIndex % 2 === 0) {
-      finalStyle.backgroundColor = '#fafafa';
+      // finalStyle.backgroundColor = 'red';
       scrollboxClass = styles.scrollboxEven;
       faderClass = styles.faderEven;
     }
@@ -359,7 +359,7 @@ class QueryResultDataTable extends React.PureComponent<
         <pre
           data-is-cell="true"
           data-column-name={column.name}
-          className={scrollboxClass}
+          className={`${scrollboxClass} dark:bg-gray-800 dark:text-gray-200`}
           style={finalStyle}
         >
           {renderValue(value, column)}
@@ -371,7 +371,7 @@ class QueryResultDataTable extends React.PureComponent<
     // If no dataKey this is a dummy cell.
     // It should render nothing, but match the row's style
     return (
-      <div style={finalStyle}>
+      <div style={finalStyle} className="dark:bg-gray-800">
         <div className="truncate" />
       </div>
     );
@@ -468,7 +468,7 @@ class QueryResultDataTable extends React.PureComponent<
             <div
               ref={measureRef}
               onContextMenu={this.handleContextMenu}
-              className="h-100 w-100"
+              className="h-100 w-100 "
               style={{
                 position: 'absolute',
               }}
@@ -488,6 +488,7 @@ class QueryResultDataTable extends React.PureComponent<
                   right: 0,
                   height: 30,
                 }}
+                className="dark:bg-gray-800"
               />
 
               {/* Input fields for copy-paste value sourcing */}

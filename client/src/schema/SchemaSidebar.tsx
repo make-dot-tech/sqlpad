@@ -74,7 +74,7 @@ function CopyMenuItem({ id, value }: { id: string; value: string }) {
         }
       }}
     >
-      Copy <span className="monospace-font">{value}</span> to clipboard
+      Copy <span className="monospace-font text-gray-300">{value}</span> to clipboard
     </MenuItem>
   );
 }
@@ -144,7 +144,7 @@ function SchemaSidebar() {
       </Tooltip>
     ) : null;
 
-    const dataType = row.dataType ? <span>{row.dataType}</span> : null;
+    const dataType = row.dataType ? <span className="text-gray-400 dark:text-gray-600">{row.dataType}</span> : null;
 
     let secondary = null;
     if (dataType && description) {
@@ -200,7 +200,7 @@ function SchemaSidebar() {
     );
   } else if (true) {
     content = (
-      <ul style={{ paddingLeft: 0 }}>
+      <ul style={{ paddingLeft: 0 }} className="text-gray-800 dark:text-gray-300">
         <List
           // position absolute takes list out of flow,
           // preventing some weird react-measure behavior in Firefox

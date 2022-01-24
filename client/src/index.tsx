@@ -11,6 +11,7 @@ import './css/react-split-pane.css';
 import './css/vendorOverrides.css';
 import Routes from './Routes';
 import swrFetcher from './utilities/swr-fetcher';
+import './input.css';
 
 declare global {
   interface Window {
@@ -29,5 +30,5 @@ ReactDOM.render(
     <Routes />
     <MessageDisplayer />
   </SWRConfig>,
-  document.getElementById('root')
+  document.getElementById('sql-pad-root')
 );

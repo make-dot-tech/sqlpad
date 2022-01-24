@@ -55,7 +55,7 @@ const Button = React.forwardRef<Ref, Props>(
       <>
         <button
           ref={ref}
-          className={leftClassNames.join(' ')}
+          className={`${leftClassNames.join(' ')} text-gray-800 dark:text-dark-textPrimary hover:text-blue-600`}
           type={htmlType || 'button'}
           disabled={disabled}
           {...rest}
@@ -68,7 +68,7 @@ const Button = React.forwardRef<Ref, Props>(
           <Menu>
             <MenuButton
               disabled={disabled}
-              className={rightClassNames.join(' ')}
+              className={`${rightClassNames.join(' ')} text-gray-700 dark:text-dark-textPrimary`}
             >
               <ChevronDownIcon size={14} style={{ marginTop: 2 }} />
             </MenuButton>

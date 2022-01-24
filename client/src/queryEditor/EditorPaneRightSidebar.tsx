@@ -21,7 +21,7 @@ const EditorPaneRightSidebar: FunctionComponent<
 
   if (showVisProperties) {
     sidebarContent = (
-      <div style={{ position: 'absolute', padding: 8 }} className="h-100 w-100">
+      <div style={{ position: 'absolute', padding: 8 }}>
         <ChartStatementDisclaimer />
         <ChartTypeSelect />
         <Spacer size={2} />

@@ -33,10 +33,10 @@ function Drawer({
       <Dialog
         aria-label={title}
         onDismiss={onClose}
-        className={styles.Dialog}
+        className={`${styles.Dialog}`}
         style={style}
       >
-        <div className={styles.titleWrapper}>
+        <div className={`${styles.titleWrapper} dark:bg-dark-themeBgDark`}>
           {title}
           <IconButton onClick={onClose}>
             <CloseIcon />

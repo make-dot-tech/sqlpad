@@ -1,19 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SQLPad</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <!-- tauCharts css must be in a known path we can ref for image exports -->
+    <link
+      rel="stylesheet"
+      href="/javascripts/vendor/tauCharts/tauCharts.min.css"
+      type="text/css"
+    />
+    <style>
+      .ace-editor-panel-dark {
+        color: '#adbac7' !important;
+        background-color: '#15202b' !important;
+      }
+      .ace-editor-panel-light {
+        color: '#0F172A' !important;
+        background-color: '#E8EDFB' !important;
+      }
+    </style>
+    <script type="module" src="/src/index.tsx"></script>
+    <script>
+      function bindEvent(element, eventName, eventHandler) {
+        if (element.addEventListener) {
+          element.addEventListener(eventName, eventHandler, false);
+        } else if (element.attachEvent) {
+          element.attachEvent('on' + eventName, eventHandler);
+        }
+      }
+      bindEvent(window, 'message', function (e) {
+        const rootElement = document.getElementById('sql-pad-root');
+        const aceEditorElem = document.getElementById('query-ace-editor');
+        aceEditorElem.classList.remove('ace-sqlserver');
+        if (typeof e.data === 'object') {
+          // rootElement.classList.add('dark');
+          // aceEditorElem.classList.remove(...aceEditorElem.classList);
+          aceEditorElem.classList.add('ace-editor-panel-dark');
+        } else {
+          if (rootElement.classList.length > 0) {
+            rootElement.classList.remove(...rootElement.classList);
+            // aceEditorElem.classList.remove(...aceEditorElem.classList);
+            rootElement.classList.add(e.data);
+            // if (e.data == 'dark')
+              aceEditorElem.classList.add('ace-editor-panel-dark');
+            // else 
+              aceEditorElem.classList.add('ace-editor-panel-light');
+          } else {
+            rootElement.classList.add(e.data);
+            // aceEditorElem.classList.remove(...aceEditorElem.classList);
+            // if (e.data == 'dark')
+              aceEditorElem.classList.add('ace-editor-panel-dark');
+            // else 
+              aceEditorElem.classList.add('ace-editor-panel-light');
+          }
+        }
+      });
+    </script>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SQLPad</title>
-  <link rel="shortcut icon" href="/favicon.ico">
-  <!-- tauCharts css must be in a known path we can ref for image exports -->
-  <link rel="stylesheet" href="/javascripts/vendor/tauCharts/tauCharts.min.css" type="text/css" />
-  <script type="module" src="/src/index.tsx"></script>
-</head>
-
-<body class="sans-serif">
-  <div id="root"></div>
-</body>
-
+  <body>
+    <div id="sql-pad-root" class=""></div>
+  </body>
 </html>
+

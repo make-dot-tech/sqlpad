@@ -13,11 +13,10 @@ function Appheader() {
     <div
       style={{
         width: '100%',
-        color: '#fff',
-        backgroundColor: 'rgba(0, 0, 0, 0.84)',
         padding: 6,
         borderBottom: '1px solid rgb(204, 204, 204)',
       }}
+      className="bg-gray-50  dark:text-dark-textPrimary dark:bg-dark-bgAccentDark text-gray-800"
     >
       <div style={{ display: 'flex' }}>
         <Logo />

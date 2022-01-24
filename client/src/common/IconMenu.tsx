@@ -19,7 +19,7 @@ const IconMenu = ({ children, icon, tooltip, variant, ...rest }: Props) => {
 
   const menu = (
     <Menu>
-      <MenuButton className={className} {...rest}>
+      <MenuButton className={`mt-2`} {...rest}>
         {icon &&
           React.cloneElement(
             icon,

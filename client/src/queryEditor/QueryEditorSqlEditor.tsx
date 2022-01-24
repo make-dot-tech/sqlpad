@@ -6,12 +6,13 @@ import {
 } from '../stores/editor-actions';
 import { useSessionQueryText } from '../stores/editor-store';
 
+
 function QueryEditorSqlEditor() {
   const onChange = useCallback((value: string) => setQueryText(value), []);
   const value = useSessionQueryText();
 
   return (
-    <div style={{ height: '100%', width: '100%' }}>
+    <div style={{ height: '100%', width: '100%' }} className="">
       <SqlEditor
         value={value || ''}
         onChange={onChange}

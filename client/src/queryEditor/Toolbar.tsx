@@ -12,9 +12,9 @@ import ToolbarToggleSchemaButton from './ToolbarToggleSchemaButton';
 function Toolbar() {
   return (
     <div
+      className="dark:bg-gray-800"
       style={{
         width: '100%',
-        backgroundColor: 'rgba(0, 0, 0, 0.04)',
         padding: 6,
         borderBottom: '1px solid rgb(204, 204, 204)',
       }}

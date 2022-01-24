@@ -59,7 +59,7 @@ function ConnectionDropdown() {
     <>
       <Select
         style={style}
-        className={className}
+        className={`${className}bg-blue-500`}
         value={selectedConnectionId || ''}
         onChange={handleChange}
       >

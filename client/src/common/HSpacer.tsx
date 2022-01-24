@@ -17,7 +17,7 @@ function HSpacer({ size = 1, grow = false }: Props) {
     style.flexGrow = 1;
   }
 
-  return <div style={style} />;
+  return <div style={style} className=""/>;
 }
 
 export default HSpacer;

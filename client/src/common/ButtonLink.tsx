@@ -37,7 +37,7 @@ const ButtonLink = ({
   let link;
   if (href) {
     link = (
-      <a href={href} className={classNames.join(' ')} {...rest}>
+      <a href={href} className={`dark:text-dark-textPrimary text-gray-800 `} {...rest}>
         {icon && React.cloneElement(icon, { size: ICON_SIZE }, null)}
         {children && icon && <span style={{ width: 4 }} />}
         {children}
@@ -45,7 +45,7 @@ const ButtonLink = ({
     );
   } else {
     link = (
-      <Link to={to || ''} className={classNames.join(' ')} {...rest}>
+      <Link to={to || ''} className={`dark:text-dark-textPrimary text-gray-800 flex flex-center`} {...rest}>
         {icon && React.cloneElement(icon, { size: ICON_SIZE }, null)}
         {children && icon && <span style={{ width: 4 }} />}
         {children}

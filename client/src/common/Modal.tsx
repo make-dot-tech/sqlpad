@@ -25,7 +25,7 @@ function Modal({
       <Dialog
         aria-label={title}
         onDismiss={onClose}
-        className={styles.Dialog}
+        className={`${styles.Dialog}`}
         style={{
           width,
         }}

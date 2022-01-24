@@ -60,7 +60,7 @@ const IconButton = React.forwardRef<Ref, ButtonProps & LinkProps>(
     if (to && !disabled && !onClick) {
       button = (
         <div style={{ display: 'inline', lineHeight: 'initial' }}>
-          <Link to={to} className={classNames.join(' ')} {...rest}>
+          <Link to={to} className={`${classNames.join(' ')} `} {...rest}>
             {React.Children.map(children, (child) => {
               if (React.isValidElement(child)) {
                 return React.cloneElement(child, { size: ICON_SIZE }, null);
@@ -74,7 +74,7 @@ const IconButton = React.forwardRef<Ref, ButtonProps & LinkProps>(
         <button
           type={type || 'button'}
           ref={ref}
-          className={classNames.join(' ')}
+          className={`${classNames.join(' ')} text-gray-800 dark:text-white dark:hover:bg-gray-800`}
           disabled={disabled}
           onClick={onClick}
           {...rest}

@@ -49,7 +49,7 @@ function QueryEditor() {
   }, [queryId]);
 
   return (
-    <div
+    <div className="bg-gray-50 text-gray-800 dark:text-dark-textPrimary dark:bg-dark-themeBgDark"
       style={{
         height: '100vh',
         width: '100%',
