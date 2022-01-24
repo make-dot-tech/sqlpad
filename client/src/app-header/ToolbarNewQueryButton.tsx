@@ -1,7 +1,6 @@
 import React from 'react';
 import ButtonLink from '../common/ButtonLink';
 import { resetNewQuery } from '../stores/editor-actions';
-
 /**
  * This link leverages the redirect to generate a new sessionId
  */

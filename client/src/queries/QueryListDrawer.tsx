@@ -191,7 +191,7 @@ function QueryListDrawer({ onClose, visible }: Props) {
       onClose={handleClose}
       placement="left"
     >
-      <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }} className="dark:bg-gray-800">
         <div className={styles.filterContainer}>
           <div className={styles.filterRow}>
             <Select
@@ -230,7 +230,7 @@ function QueryListDrawer({ onClose, visible }: Props) {
           <div className={styles.filterRow}>
             <div style={{ flex: '1 1 auto', width: '50%' }}>
               <Input
-                style={{ height: 36 }}
+                style={{ height: 36, backgroundColor:'#e0eafb' }}
                 placeholder="search"
                 value={search}
                 onChange={(e: any) => setSearch(e.target.value)}

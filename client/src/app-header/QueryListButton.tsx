@@ -10,6 +10,7 @@ function QueryListButton() {
       <Button variant="ghost" onClick={() => setShowQueries(true)}>
         Queries
       </Button>
+
       <QueryListDrawer
         visible={showQueries}
         onClose={() => setShowQueries(false)}

@@ -127,7 +127,7 @@ function QuerySaveModal() {
       initialFocusRef={initialRef}
     >
       <form onSubmit={handleSaveRequest}>
-        <label>
+        <label className="dark">
           Name
           <Input
             ref={initialRef}

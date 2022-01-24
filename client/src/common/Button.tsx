@@ -55,26 +55,31 @@ const Button = React.forwardRef<Ref, Props>(
       <>
         <button
           ref={ref}
-          className={`${leftClassNames.join(' ')} text-gray-800 dark:text-dark-textPrimary hover:text-blue-600`}
+          className={`flex flex-center text-gray-800 dark:text-dark-textPrimary hover:text-blue-600 mr-4`}
           type={htmlType || 'button'}
           disabled={disabled}
           {...rest}
         >
+
           {icon && React.cloneElement(icon, { size: ICON_SIZE }, null)}
           {children && icon && <span style={{ width: 4 }} />}
           {children}
         </button>
-        {menuItems && menuItems.length > 0 && (
-          <Menu>
-            <MenuButton
-              disabled={disabled}
-              className={`${rightClassNames.join(' ')} text-gray-700 dark:text-dark-textPrimary`}
-            >
-              <ChevronDownIcon size={14} style={{ marginTop: 2 }} />
-            </MenuButton>
-            <MenuList>{menuItems}</MenuList>
-          </Menu>
-        )}
+        {
+          menuItems && menuItems.length > 0 && (
+            <div className="">
+              <Menu>
+                <MenuButton
+                  disabled={disabled}
+                  className={`${rightClassNames.join(' ')} text-gray-700 dark:text-dark-textPrimary border border-gray-200 dark:hover:bg-gray-600`}
+                >
+                  <ChevronDownIcon size={14} style={{ marginTop: 2 }} />
+                </MenuButton>
+                <MenuList>{menuItems}</MenuList>
+              </Menu>
+            </div>
+          )
+        }
       </>
     );
   }

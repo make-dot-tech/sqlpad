@@ -30,8 +30,8 @@ function Modal({
           width,
         }}
         initialFocusRef={initialFocusRef}
-      >
-        <div className={styles.titleWrapper}>
+      >   
+        <div className={`${styles.titleWrapper} bg-gray-400`}>
           <span className={styles.title}>{title}</span>
           {onClose && (
             <IconButton onClick={onClose}>
@@ -39,7 +39,7 @@ function Modal({
             </IconButton>
           )}
         </div>
-        <div className={styles.dialogBody}>{children}</div>
+        <div className={`${styles.dialogBody} bg-gray-400 dark:bg-blue-800`}>{children}</div>
       </Dialog>
     );
   }

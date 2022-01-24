@@ -16,9 +16,6 @@ export interface Props {
   value: string;
   onSelectionChange: (value: string) => void;
 }
-console.log(localStorage.key(0));
-
-
 function SqlEditor({
   autoHeight,
   onChange,

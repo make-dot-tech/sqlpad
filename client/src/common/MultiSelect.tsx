@@ -68,8 +68,8 @@ function getMatchSorterItems(
 
   return inputValue
     ? matchSorter(unselectedItems, inputValue, {
-        keys: ['name'],
-      })
+      keys: ['name'],
+    })
     : unselectedItems;
 }
 
@@ -193,9 +193,9 @@ function MultiSelect(props: Props) {
         style={
           isOpen
             ? {
-                borderBottomRightRadius: 0,
-                borderBottomLeftRadius: 0,
-              }
+              borderBottomRightRadius: 0,
+              borderBottomLeftRadius: 0,
+            }
             : undefined
         }
         {...getComboboxProps()}

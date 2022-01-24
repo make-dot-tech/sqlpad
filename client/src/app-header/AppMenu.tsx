@@ -21,7 +21,7 @@ function AppMenu() {
   }
 
   return (
-    <div>
+    <div className="">
       <IconMenu variant="ghost" icon={<DotsVerticalIcon aria-label="menu" />}>
         <MenuItem hidden={hideUserItems} onSelect={() => setShowProfile(true)}>
           Profile

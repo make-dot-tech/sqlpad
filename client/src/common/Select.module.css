@@ -9,9 +9,8 @@
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
-  background-color: #fff;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='black'><polygon points='0,0 100,0 50,50'/></svg>"),
-    linear-gradient(to bottom, #ffffff 0%, #ffffff 100%);
+  background-color: #e0eafb;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='black'><polygon points='0,0 100,0 50,50'/></svg>");
   background-repeat: no-repeat, repeat;
   background-position: right 10px top 14px, 0 0;
   background-size: 0.65em auto, 100%;
@@ -25,7 +24,7 @@
   font-size: 14px;
   line-height: 1.5;
   border: 1px solid #d9d9d9;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 /* from https://www.filamentgroup.com/lab/select-css.html */
