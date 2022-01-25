@@ -76,12 +76,13 @@ function ACLInput({ acl, onChange, disabled }: Props) {
       <label>Access</label>
       {acl.length === 0 ? (
         <div
+        className="bg-gray-400"
           style={{
             padding: 16,
             marginTop: 16,
             marginBottom: 16,
             textAlign: 'center',
-            backgroundColor: '#fafafa',
+            // backgroundColor: '#fafafa',
             border: '1px dotted #ddd',
           }}
         >

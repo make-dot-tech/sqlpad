@@ -16,7 +16,7 @@ export default function Select({ children, error, className, ...rest }: Props) {
   }
 
   return (
-    <select className={`${classNames.join(' ')}`} {...rest}>
+    <select className={`${classNames.join(' ')} bg-gray-400`} {...rest}>
       {children}
     </select>
   );

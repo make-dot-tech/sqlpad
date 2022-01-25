@@ -189,7 +189,7 @@ function MultiSelect(props: Props) {
   return (
     <div style={{ position: 'relative' }}>
       <div
-        className={styles.container}
+        className={`${styles.container} border border-gray-600`}
         style={
           isOpen
             ? {
@@ -211,7 +211,7 @@ function MultiSelect(props: Props) {
         ))}
 
         <input
-          className={styles.input}
+          className={`${styles.input} bg-gray-400`}
           placeholder={placeholder}
           {...getInputProps({
             onKeyDown(event) {

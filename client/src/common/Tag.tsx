@@ -11,7 +11,7 @@ export type Ref = HTMLDivElement;
 const Tag = React.forwardRef<Ref, Props>(
   ({ children, onClose, ...rest }, ref) => {
     return (
-      <div ref={ref} className={styles.tagContainer} {...rest}>
+      <div ref={ref} className={`${styles.tagContainer}`} {...rest}>
         <span>{children}</span>
         {onClose && (
           <span

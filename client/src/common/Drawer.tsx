@@ -33,7 +33,7 @@ function Drawer({
       <Dialog
         aria-label={title}
         onDismiss={onClose}
-        className={`${styles.Dialog} bg-gray-400`}
+        className={`${styles.Dialog} bg-gray-500`}
         style={style}
       >
         <div className={`${styles.titleWrapper} text-gray-200`}>

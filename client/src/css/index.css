@@ -106,7 +106,10 @@ input {
   border-radius: 2px;
   animation: slide-down 0.1s ease;
 }
-
+[data-reach-menu-list],
+[data-reach-menu-items] {
+  background-color: #acadad !important;
+}
 /*  Utilities
 ============================================================================ */
 .monospace-font {

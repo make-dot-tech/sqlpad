@@ -17,6 +17,7 @@ function AboutModal({ visible, onClose }: Props) {
         title="About SQLPad"
         visible={visible}
         onClose={onClose}
+        className="bg-gray-800"
       >
         <AboutContent version={version} />
       </Modal>

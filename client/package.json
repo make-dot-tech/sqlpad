@@ -3,6 +3,8 @@
   "version": "6.8.1",
   "private": true,
   "dependencies": {
+    "@headlessui/react": "^1.4.3",
+    "@heroicons/react": "^1.0.5",
     "@reach/dialog": "^0.16.2",
     "@reach/menu-button": "^0.16.2",
     "@reach/tooltip": "^0.16.2",

@@ -12,7 +12,7 @@ const ListItem = ({
   }
 
   return (
-    <div className={classNames.join(' ')} {...rest}>
+    <div className={`${classNames.join(' ')} bg-blue-800`} {...rest}>
       {children}
     </div>
   );
