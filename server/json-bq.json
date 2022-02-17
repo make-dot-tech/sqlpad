@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "alphastack",
+  "private_key_id": "91bb1f02f81d6172b1394a03229554eabb94194a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDZeggFv7gramHg\npXRmCBsI8DQdJuwBaATQ76YlACKQqG9t2QyXwcMltYRsB4GMtLzLkJmoFoYXDtx4\nBYtHrSVsZYNKi6JOZT9yG4wkwdWjldIaqUOEAj+JwKa1m8gNgiHgnHwE3rBknLh7\nY8neiDHcLhlSuDDGhRhRWXcW7pgw1iCf43o4JCQuREBRO67D0QYdg9CYRYwYvV9g\naQc6rZC8d6BhrLOheg9KKPRuqoUWZREeZ7K25dh6YFgJ71QqqZw+iOqoKyPC+A6x\nS10lXkmN1EXu09gioOzhH9qsLzDkSq6dasVlEwtjQHq99qqbprdggWUqYT998Ipk\nNC6xfmBxAgMBAAECggEAEaWrXPwPr8Y0JwyGA3mI6BLFx8/OutZ7/ZBUxQ/bvi1M\nzXcdZHseoMK3+iQpyQcpgsM7FL6vJtPX5A1fHfPY45DhNH1cMExa96Fwn9LyyRFx\nOSSfC+k6yqzNWlNHyoDSyu0nyyVe3uswtSKF0P7wPNOozmOP4awPKxq9ZSj7RIsV\nREAVfx3jyvQraMhvHcP6zUA7VHRIe2gYRNBa4bfzfpxTzezyPOY+uFzBoI8SkjuW\nf9egjXHUl9VIUv26bNejJ8GuhXjzNYJNMHVk6r2mQc7uabz/9s8difJxisk0wZg0\nganF1xlRGmcwQkS/YMh3TuOM4XWE9/1VuCg/GEH62QKBgQD5fg/SIgAiGptHwfSs\nEGdOMuE6PBAZ3PLTofZXNTFIN3Ul89BB76Jk8TW/LliCh+cqXmxJOB/yYKNqfrOm\nqrbciTQj+D7R0SrMLB7K0pK5xNitjC+mYaV5Sqtb3c+bV5GhQ2898Cc+q7g5VP3T\nvgAiaqXvXuFkd8O2dKeJN8dohwKBgQDfJjDEuBuWl15WxNCYTixc4C/9cIqz0CA/\ncu/csLjIccNM+W0j6RUDFd7MPwj6T2w/Wh15njyz3DkeDeDSDrlFj+96w/lhhO+x\nfaLtAnkZxp1tB02PP3AfS1wpchqsCji115w9L3MntkRAkddaHRrImIYS3rxL+v4N\nJgswqtxFRwKBgDkx3Q6fHMi0sMRSgnSvjf8vStK+0jIbpM8/Yem8GAAmNoTsz+FN\nvjzFzzx0s3W5EhV0b/6ZDznRTaUsRqL+n80O5xUX487V1KnZs3VrsJdFuSaP7JyH\n5hdYNtBomR9Tg98kRmw8kcKcOy9pfIb+F6nMKR4m8iTGD+fT9lROpTghAoGAK9CP\n2tBbemIWP+s9Geqfg0zxn02trki7TDoBJs/8OD8+HasL5vUpDwYITQpDdQKLOpUz\nHGIZgSdIf8Ix1ozVi/cLCovYN3Gmrq8AgpDtvkXlOzcn32yRU1O0sN6aphULtYi0\nQL9EWRPMqvD329XDIIfyK1pYloKdx28k21VxEpkCgYEArUcIgx7XjLM9VmVX/3gd\n0kdBfhxYKliBuq4HoR5tFIfHvdzthe0Y9vhAKcFGYIFiRjwh7lfqQWVb4Z5QjaMC\nG+btysI90Ncy6x06cxs0+mHU3CsLz8tCUvV50e1phjXha63vMRE8qLlyER3QIA7G\nLxy95OkGZRCiWTYp9GcJg3c=\n-----END PRIVATE KEY-----\n",
+  "client_email": "alphastack-oits@alphastack.iam.gserviceaccount.com",
+  "client_id": "110620983504613451021",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/alphastack-oits%40alphastack.iam.gserviceaccount.com"
+}
