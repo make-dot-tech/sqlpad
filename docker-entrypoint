@@ -8,4 +8,4 @@ if [ -d "/etc/docker-entrypoint.d" ]; then
         . "$line"
     done
 fi
-exec node /usr/app/server.js $@
+exec node /usr/app/server.js --config /usr/app/config.dev.env  $@

@@ -80,6 +80,7 @@ COPY --from=build /sqlpad/server .
 
 # RUN ["cp", "/sqlpad/json-bq.json", "/var/lib/sqlpad/"]
 COPY ./server/json-bq.json /var/lib/sqlpad/
+COPY ./server/.env /usr/app/
 
 ENV SQLPAD_AUTH_DISABLED=true
 ENV SQLPAD_AUTH_DISABLED_DEFAULT_ROLE=admin
