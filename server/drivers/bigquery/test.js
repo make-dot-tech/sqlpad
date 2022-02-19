@@ -5,11 +5,6 @@ const testUtils = require('../test-utils');
 const connection = {
   name: 'test bigquery',
   driver: 'bigquery',
-  projectId: process.env.BIGQUERY_TEST_GCP_PROJECT_ID,
-  datasetName: process.env.BIGQUERY_TEST_DATASET_NAME,
-  keyFile: process.env.BIGQUERY_TEST_CREDENTIALS_FILE,
-  datasetLocation: process.env.BIGQUERY_TEST_DATASET_LOCATION,
-  maxRows: 10,
 };
 
 const testTable = 'sqlpad_test';
