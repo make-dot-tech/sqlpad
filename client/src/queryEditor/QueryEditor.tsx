@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { isMobile } from 'react-device-detect';
 import { useParams } from 'react-router-dom';
 import SplitPane from 'react-split-pane';
 import AppHeader from '../app-header/AppHeader';
@@ -26,6 +27,12 @@ function QueryEditor() {
   const [showNotFound, setShowNotFound] = useState(false);
   const { queryId = '' } = useParams<Params>();
   useShortcuts();
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    if (isMobile) {
+      setMobile(true);
+    }
+  }, [mobile]);
 
   // On queryId change from URL string, load query as needed.
   // If queryId does not exist, it is because the route is hitting `/queries/new` which avoids sending a queryId param
@@ -69,10 +76,11 @@ function QueryEditor() {
               maxSize={-100}
               onChange={() => debouncedResizeChart(queryId)}
             >
+              {mobile?<QueryEditorResultPane />:''}
               <EditorPaneVis queryId={queryId}>
                 <QueryEditorSqlEditor />
               </EditorPaneVis>
-              <QueryEditorResultPane />
+              {!mobile?<QueryEditorResultPane />:''}
             </SplitPane>
           </EditorPaneSchemaSidebar>
         </EditorPaneRightSidebar>
