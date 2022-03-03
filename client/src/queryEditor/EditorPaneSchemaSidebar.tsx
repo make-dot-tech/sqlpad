@@ -33,7 +33,7 @@ const EditorPaneSchemaSidebar: FunctionComponent<
     <SplitPane
       split={mobile ? 'horizontal' : 'vertical'}
       minSize={150}
-      defaultSize={ mobile ? '50vw' : '20%'}
+      defaultSize={ mobile ? '75vw' : '20%'}
       maxSize={-100}
       pane1Style={{ display: mobile ? 'flow-root !important':'flex !important'}}
       onChange={() => debouncedResizeChart(queryId)}
