@@ -70,7 +70,7 @@ async function listQueries(req, res) {
     limit = 100,
     offset = 0,
   } = query;
-
+  console.log(`user.id is ${user.id}`);
   let sql = `
     SELECT
       queries.id,

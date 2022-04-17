@@ -15,24 +15,24 @@ function Toolbar() {
       style={{
         width: '100%',
         backgroundColor: 'rgba(0, 0, 0, 0.04)',
-        padding: 6,
+        padding: 1,
         borderBottom: '1px solid rgb(204, 204, 204)',
       }}
     >
       <div style={{ display: 'flex' }}>
-        <ToolbarToggleSchemaButton />
-        <ConnectionDropDown />
-        <ToolbarSpacer />
-        <ToolbarConnectionClientButton />
-        <ToolbarSpacer grow />
-        <ToolbarQueryName />
-        <ToolbarSpacer grow />
+        {/* <ToolbarToggleSchemaButton /> */}
+        {/* <ConnectionDropDown /> */}
+        {/* <ToolbarSpacer /> */}
+        {/* <ToolbarConnectionClientButton /> */}
+        {/* <ToolbarSpacer grow /> */}
+        {/* <ToolbarQueryName /> */}
+        {/* <ToolbarSpacer grow />
         <ToolbarRunButton />
         <ToolbarSpacer />
         <ToolbarCancelButton />
         <ToolbarSpacer />
         <ToolbarHistoryButton />
-        <ToolbarChartButton />
+        <ToolbarChartButton /> */}
       </div>
     </div>
   );

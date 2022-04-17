@@ -29,7 +29,7 @@ function SignUp() {
   return (
     <div style={{ width: '300px', textAlign: 'center', margin: '100px auto' }}>
       <form onSubmit={signUp}>
-        <h1>SQLPad</h1>
+        <h1>AlphaBuilder</h1>
         <Input
           name="email"
           type="email"

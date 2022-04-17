@@ -1,5 +1,6 @@
 const passport = require('passport');
 const getHeaderUser = require('../lib/get-header-user');
+const Web3Strategy = require('passport-dapp-web3');
 require('../typedefs');
 
 /**
@@ -46,6 +47,28 @@ function sessionlessAuth(req, res, next) {
   // This will stub in a noauth user into the users table, and associate the session accordingly
   if (config.get('authDisabled')) {
     return passport.authenticate('disable-auth', handleAuth)(req, res, next);
+  }
+
+  if (config.get('authDisabled')) {
+    return passport.use(
+      new Web3Strategy(function (
+        address = '0x871228A1E5a0F147F875215C6a42A38f26919544',
+        message,
+        signed,
+        done
+      ) {
+        User.findOne({ address: address }, function (err, user) {
+          if (err) {
+            return done(err);
+          }
+          if (!user) {
+            return done(null, false);
+          }
+
+          return done(null, user);
+        });
+      })
+    );
   }
 
   // If authorization header is present, attempt to authenticate based on the type of auth header

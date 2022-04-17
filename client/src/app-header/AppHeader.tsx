@@ -7,6 +7,8 @@ import QueryListButton from './QueryListButton';
 import ToolbarNewQueryButton from './ToolbarNewQueryButton';
 import AppHeaderSpacer from './AppHeaderSpacer';
 import AppHeaderUser from './AppHeaderUser';
+import ToolbarHistoryButton from '../queryEditor/ToolbarHistoryButton';
+import ToolbarChartButton from '../queryEditor/ToolbarChartButton';
 
 function Appheader() {
   return (
@@ -21,9 +23,12 @@ function Appheader() {
     >
       <div style={{ display: 'flex' }}>
         <Logo />
-        <QueryListButton />
-        <ToolbarNewQueryButton />
+        {/* <QueryListButton /> */}
+        {/* <ToolbarNewQueryButton /> */}
         <HistoryButton />
+
+        <ToolbarHistoryButton />
+        <ToolbarChartButton />
         <AppHeaderAdminSection />
         <AppHeaderSpacer grow />
         <AppHeaderUser />

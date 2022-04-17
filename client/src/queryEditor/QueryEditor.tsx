@@ -16,6 +16,8 @@ import QueryEditorResultPane from './QueryEditorResultPane';
 import QueryEditorSqlEditor from './QueryEditorSqlEditor';
 import QuerySaveModal from './QuerySaveModal';
 import Toolbar from './Toolbar';
+import ToolbarChartButton from './ToolbarChartButton';
+import ToolbarHistoryButton from './ToolbarHistoryButton';
 import UnsavedQuerySelector from './UnsavedQuerySelector';
 
 interface Params {
@@ -58,7 +60,7 @@ function QueryEditor() {
       }}
     >
       <AppHeader />
-      <Toolbar />
+      {/* <Toolbar /> */}
       <div style={{ position: 'relative', flexGrow: 1 }}>
         <EditorPaneRightSidebar queryId={queryId}>
           <EditorPaneSchemaSidebar queryId={queryId}>
