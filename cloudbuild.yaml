@@ -1,10 +1,10 @@
 steps:
 # Build and tag using commit sha
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '.', '-t', 'https://github.com/make-dot-tech/sqlpad.git/$PROJECT_ID/sqlpad-image:${COMMIT_SHA}', '-f', 'Dockerfile']
+  args: ['build', '.', '-t', 'https://github.com/make-dot-tech/sqlpad.git/$PROJECT_ID/sqlpad-image:${SHORT_SHA}', '-f', 'Dockerfile']
 # Push the container image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'https://github.com/make-dot-tech/sqlpad.git/$PROJECT_ID/sqlpad-image:${COMMIT_SHA}']
+  args: ['push', 'https://github.com/make-dot-tech/sqlpad.git/$PROJECT_ID/sqlpad-image:${SHORT_SHA}']
 # Create release in Google Cloud Deploy
 - name: gcr.io/google.com/cloudsdktool/cloud-sdk
   entrypoint: gcloud
@@ -14,5 +14,5 @@ steps:
       "--delivery-pipeline", "sqlpad-pipeline",
       "--region", "us-central1",
       "--annotations", "commitId=${REVISION_ID}",
-      "--images", "sqlpad-image=https://github.com/make-dot-tech/sqlpad.git/$PROJECT_ID/sqlpad-image:${COMMIT_SHA}"
+      "--images", "sqlpad-image=https://github.com/make-dot-tech/sqlpad.git/$PROJECT_ID/sqlpad-image:${SHORT_SHA}"
     ]
