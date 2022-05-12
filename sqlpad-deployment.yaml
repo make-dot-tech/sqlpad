@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: sqlpad-app
-        image: gcr.io/[PROJECT_ID]/sqlpad:v1
+        image: $_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA
         ports:
         - containerPort: 4000
         env:
