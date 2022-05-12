@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: my-app
+      app: sqlpad-app
   replicas: 1
   template:
     metadata:
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: sqlpad-app
-        image: $_GCR_HOSTNAME/$PROJECT_ID/$REPO_NAME/$_SERVICE_NAME:$COMMIT_SHA
+        image: gcr.io/alphastack-sandbox/github.com/make-dot-tech/sqlpad@sha256:2dd70062ac38573d4d43f6e94b309c6a32a34760167ff79b2ceb0db9de92c159
         ports:
         - containerPort: 4000
         env:
