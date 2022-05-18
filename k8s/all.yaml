@@ -62,6 +62,6 @@ spec:
   - name: tcp-rule-sqlpad
     port: 3001
     protocol: TCP
-    targetPort: 3001
+    targetPort: 8080
   selector:
     app: sqlpad
