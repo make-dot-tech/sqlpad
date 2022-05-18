@@ -27,6 +27,10 @@ Documentation located at [https://getsqlpad.com](https://getsqlpad.com).
 
 Documentation source located in [docs directory](https://github.com/sqlpad/sqlpad/tree/master/docs), built/rendered by docsify.
 
+## Deployement Setup
+- 1st version is deployed on `Google Cloud Run`
+- Will be deployed on `Google GKE`
+
 ## Project Status
 
 Despite recent development this last year and move to GitHub org, SQLPad is mostly "finished" in that it won't radically be changing from what it is today.
