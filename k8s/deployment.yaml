@@ -1,0 +1,19 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sqlpad
+spec:
+  selector:
+    matchLabels:
+      app: sqlpad
+  template:
+    metadata:
+      labels:
+        app: sqlpad
+    spec:
+      containers:
+      - name: sqlpad
+        image: sqlpad-image
+        ports:
+          - containerPort: 3001

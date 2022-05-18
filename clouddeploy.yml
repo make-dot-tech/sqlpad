@@ -1,0 +1,33 @@
+---
+apiVersion: deploy.cloud.google.com/v1
+kind: DeliveryPipeline
+metadata:
+  name: sqlpad-pipeline
+  description: sqlpad-pipeline
+  serialPipeline:
+  stages:
+  - targetId: dev
+    profiles: []
+  - targetId: prod
+    profiles: []
+---
+apiVersion: deploy.cloud.google.com/v1
+kind: Target
+metadata:
+  name: dev
+  description: development cluster
+  gke: 
+    cluster: projects/$PROJECT_ID/locations/$LOCATION/clusters/$_DEV_CLUSTER
+---
+substitutions:
+  _GCR_HOSTNAME: us.gcr.io
+  _PLATFORM: managed
+  _CLUSTER: cluster-dev-1
+  _SERVICE_NAME: sqlpad
+  _DEPLOY_REGION: us-central1-b
+  _DEV_CLUSTER: cluster-dev-1
+  _PROD_CLUSTER: cluster-prod
+tags:
+  - gcp-cloud-build-deploy-gke-sqlpad
+  - sqlpad
+  - sample_tag
