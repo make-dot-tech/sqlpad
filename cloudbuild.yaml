@@ -1,27 +1,53 @@
 steps:
-# Uses the ubuntu build step:
-# to run a shell script; and
-# set env variables for its execution
-- name: 'ubuntu'
-  args: ['bash', './myscript.sh']
-  env:
-  - 'BUILD=$BUILD_ID'
-  - 'PROJECT_ID=$PROJECT_ID'
-  - 'PROJECT_NUMBER=$PROJECT_NUMBER'
-  - 'REV=$REVISION_ID'
-
-# Uses the docker build step to build an image called sqlpad-image
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/sqlpad-image', '.']
-
-# Create release in Google Cloud Deploy
-- name: gcr.io/google.com/cloudsdktool/cloud-sdk
-  entrypoint: gcloud
+- name: 'gcr.io/k8s-skaffold/pack'
+  entrypoint: 'pack'
+  args: ['build', '--builder=gcr.io/buildpacks/builder', '--publish', 'us.gcr.io/alphastack-sandbox/sqlpad/sqlpad-image:$SHORT_SHA']
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: 'bash'
   args:
-    [
-      "deploy", "releases", "create", "rel-${SHORT_SHA}",
-      "--delivery-pipeline", "sqlpad-pipeline",
-      "--region", "us-central1",
-      "--annotations", "commitId=${REVISION_ID}",
-      "--images", "sqlpad-image=gcr.io/$PROJECT_ID/sqlpad-image"
-    ]
+  - '-c'
+  - > 
+    gcloud deploy releases create 'release-$SHORT_SHA'
+    --delivery-pipeline=sqlpad-pipeline
+    --region=us-central1
+    --source=./
+    --images=sqlpad=us.gcr.io/alphastack-sandbox/sqlpad/sqlpad-image:$SHORT_SHA
+---
+apiVersion: deploy.cloud.google.com/v1
+kind: DeliveryPipeline
+metadata:
+  name: sqlpad-pipeline
+  description: sqlpad-pipeline
+  serialPipeline:
+  stages:
+  - targetId: dev
+    profiles: []
+  - targetId: prod
+    profiles: []
+---
+apiVersion: deploy.cloud.google.com/v1
+kind: Target
+metadata:
+  name: dev
+  description: development cluster
+  gke: 
+    cluster: projects/$PROJECT_ID/locations/$LOCATION/clusters/$_DEV_CLUSTER
+---
+apiVersion: deploy.cloud.google.com/v1
+kind: Target
+metadata:
+  name: prod
+  description: prod cluster
+  gke: 
+    cluster: projects/$PROJECT_ID/locations/$LOCATION/clusters/$_PROD_CLUSTER
+---
+substitutions:
+  _GCR_HOSTNAME: us.gcr.io
+  _PLATFORM: managed
+  _SERVICE_NAME: sqlpad
+  _DEV_CLUSTER: cluster-dev-1
+  _PROD_CLUSTER: cluster-prod
+  _DEPLOY_REGION: us-central1
+tags:
+  - gcp-cloud-build-deploy-gke-sqlpad
+  - sqlpad
